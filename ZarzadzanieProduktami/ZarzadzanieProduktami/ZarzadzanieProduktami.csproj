@@ -160,6 +160,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808161158241_InitialCreate.cs" />
+    <Compile Include="Migrations\201808161158241_InitialCreate.Designer.cs">
+      <DependentUpon>201808161158241_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808161211081_Walidacja danych.cs" />
+    <Compile Include="Migrations\201808161211081_Walidacja danych.Designer.cs">
+      <DependentUpon>201808161211081_Walidacja danych.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Kategoria.cs" />
     <Compile Include="Models\Produkt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -229,6 +238,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808161158241_InitialCreate.resx">
+      <DependentUpon>201808161158241_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808161211081_Walidacja danych.resx">
+      <DependentUpon>201808161211081_Walidacja danych.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
