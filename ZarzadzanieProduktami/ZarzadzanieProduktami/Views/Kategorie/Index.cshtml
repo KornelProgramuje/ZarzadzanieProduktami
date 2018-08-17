@@ -6,7 +6,7 @@
 
 <h2 class="jumbotron table-bordered text-center">Lista kategorii</h2>
 <div>
-    <a href="Kategorie/Create" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Dodaj nową kategorię</a>
+    @Html.ActionLink("Dodaj nową kategorię", "Create", null, new { @class = "btn btn-primary btn-sm" })
 </div>
 <br />
 <table class="table table-hover table-bordered">
@@ -24,8 +24,8 @@
                 @Html.DisplayFor(modelItem => item.NazwaKategorii)
             </td>
             <td>
-                @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Usuń", "Delete", new { id = item.Id })
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
             </td>
         </tr>
     }

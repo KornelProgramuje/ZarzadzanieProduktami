@@ -8,7 +8,6 @@
 
 <h3>Czy na pewno chcesz usunąć produkt <b>"@Html.DisplayFor(model => model.Nazwa)"</b>?</h3>
 <div>
-    <h4>Produkt</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -45,12 +44,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Usuń" class="btn btn-default" /> |
-            @Html.ActionLink("Wróć do listy", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        @Html.ActionLink("Wróć do listy", "Index", null, new { @class = "btn btn-success" })
+    </div>
     }
 </div>
