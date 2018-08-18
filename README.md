@@ -1,2 +1,13 @@
-# ZarzadzanieProduktami2
-Prosta aplikacja ASP.NET MVC umożliwiającą zarządzanie produktami (lista produktów, dodanie, edycja oraz usunięcie).
+# ZarzadzanieProduktami
+Prosta aplikacja ASP.NET MVC tworzona w VisualStudio 2017 umożliwiającą zarządzanie produktami (lista produktów, dodanie, edycja oraz usunięcie).
+
+
+<b>Istrukcja uruchomienie : </b>
+<br/>-pobierz projekt
+<br/>-wypakuj 
+<br/>-otwórz w VisualStudio
+<br/>-skompiluj i gotowe :)
+
+<b>Do zrobienia :</b>
+<br/>-możliwość wyszukiwania produktów
+<br/>-poprawki wizualne
