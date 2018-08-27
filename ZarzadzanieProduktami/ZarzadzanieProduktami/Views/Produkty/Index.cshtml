@@ -1,14 +1,27 @@
 ﻿@model IEnumerable<ZarzadzanieProduktami.Models.Produkt>
-
 @{
     ViewBag.Title = "Index";
 }
-
 <h2 class="jumbotron table-bordered text-center">Lista produktów</h2>
-<div>
-    @Html.ActionLink("Dodaj nowy produkt", "Create", null, new { @class = "btn btn-primary btn-sm" })
+<div style="padding-bottom:70px">
+    <div style="float:left">
+        @Html.ActionLink("Dodaj nowy produkt", "Create", null, new { @class = "btn btn-primary btn-sm" })
+
+    </div>
+    <div style="float:right">
+        @using (Html.BeginForm())
+        {
+        <div style="float:right">
+            Wyszukaj : @Html.TextBox("wyszukiwanie")
+            <br />
+            <input style="float:right" type="submit" value="Wyszukaj" class="btn btn-primary btn-sm" />
+
+        </div>
+        }
+    </div>
+    
 </div>
-<br />
+
 <table class="table table table-hover table-bordered">
     <tr>
         <th>
@@ -25,7 +38,6 @@
         </th>
         <th></th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
@@ -41,11 +53,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Cena)
             </td>
-            
+
             <td>
-                @Html.ActionLink("Edytuj", "Edit", new { id = item.Id },new { @class = "btn btn-primary btn-xs" }) |
-                @Html.ActionLink("Usuń", "Delete", new { id = item.Id },new { @class = "btn btn-danger btn-xs" })
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
             </td>
         </tr>
     }
+
 </table>
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger " role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Błąd:</span>
+        Brak produktów o podanej nazwie
+    </div>
+}
