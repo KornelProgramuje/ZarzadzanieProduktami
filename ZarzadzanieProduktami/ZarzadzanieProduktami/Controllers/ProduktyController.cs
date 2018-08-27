@@ -16,11 +16,24 @@ namespace ZarzadzanieProduktami.Controllers
         private ProduktyContext db = new ProduktyContext();
 
         // GET: Produkty
-        public ActionResult Index()
+        public ActionResult Index(string wyszukiwanie)
+        {
+            var produkty = from c in db.Produkty
+                           select c;
+
+            if(!String.IsNullOrEmpty(wyszukiwanie))
+            {
+                produkty = produkty.Where(s => s.Nazwa.Contains(wyszukiwanie));
+            }
+
+            return View(produkty.ToList());
+        }
+
+       /* public ActionResult Index()
         {
             var produkty = db.Produkty.Include(p => p.Kategorie);
             return View(produkty.ToList());
-        }
+        }*/
 
         // GET: Produkty/Details/5
         public ActionResult Details(int? id)

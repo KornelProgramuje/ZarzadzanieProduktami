@@ -16,9 +16,21 @@ namespace ZarzadzanieProduktami.Controllers
         private ProduktyContext db = new ProduktyContext();
 
         // GET: Kategorie
-        public ActionResult Index()
+       /* public ActionResult Index()
         {
             return View(db.Kategorie.ToList());
+        }*/
+        public ActionResult Index(string wyszukiwanie)
+        {
+            var kategorie = from c in db.Kategorie
+                           select c;
+
+            if (!String.IsNullOrEmpty(wyszukiwanie))
+            {
+                kategorie = kategorie.Where(s => s.NazwaKategorii.Contains(wyszukiwanie));
+            }
+
+            return View(kategorie.ToList());
         }
 
         // GET: Kategorie/Details/5
