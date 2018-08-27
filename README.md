@@ -5,9 +5,9 @@ Prosta aplikacja ASP.NET MVC tworzona w VisualStudio 2017 umożliwiająca zarzą
 <b>Istrukcja uruchomienia : </b>
 <br/>-pobierz projekt
 <br/>-wypakuj
-<br/>-otwórz w VisualStudio
+<br/>-otwórz w VisualStudio, przejdź do Solution Explorer i kliknij w projekt
 <br/>-skompiluj i gotowe :)
 
 <b>Do zrobienia :</b>
-<br/>-możliwość wyszukiwania produktów
+<br/>-możliwość wyszukiwania produktów (zrobione)
 <br/>-poprawki wizualne
